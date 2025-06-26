@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   supabase: {
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
@@ -11,6 +12,19 @@ export default defineNuxtConfig({
       include: ['/dashboard', '/dashboard/**'],
       exclude: [],
       saveRedirectToCookie: false
+    }
+  },
+  ui: {
+    theme: {
+      colors: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'info',
+        'success',
+        'warning',
+        'error'
+      ]
     }
   },
   app: {

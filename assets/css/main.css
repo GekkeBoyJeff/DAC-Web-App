@@ -1,0 +1,42 @@
+@import "@nuxt/ui";
+@import "tailwindcss";
+
+@theme static {
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-DacYellow: #d6a760;
+  --color-DacYellow-100: #fff3cc;
+  --color-DacYellow-300: #ffd966;
+  --color-DacYellow-400: #ffcc33;
+  --color-DacYellow-500: #e9b44c;
+  --color-DacYellow-600: #cc9933;
+  --color-DacYellow-700: #996600;
+
+  --color-DacBrown: #422f32;
+  --color-DacBrown-Lighter: #6c4551;
+
+  --color-DacBlack: #0a0e15;
+  --color-DacBlack-900: #212631;
+  --color-DacBlack-800: #373f4e;
+  --color-DacBlack-700: #4e576a;
+  --color-DacBlack-600: #667085;
+
+  /* --color-DacWhite: #f7f7f7; */
+  --color-DacWhite: #ffffff;
+  --color-DacWhite-600: #bfc6d4;
+  --color-DacWhite-700: #d1d6e0;
+  --color-DacWhite-800: #e0e4eb;
+  --color-DacWhite-900: #f0f1f5;
+
+  --color-DacPurple: rgb(166 129 255 / 1);
+}
+
+:root {
+  --ui-primary: var(--color-DacBrown);
+  --ui-secondary: var(--color-DacYellow);
+  --ui-tertiary: var(--color-DacPurple);
+  --ui-info: var(--color-DacBlack);
+  --ui-success: var(--color-green-500);
+  --ui-warning: var(--color-DacYellow-500);
+  --ui-error: #ef4444;
+}

@@ -12,7 +12,7 @@ const isDark = computed({
 </script>
 
 <template>
-    <header class="flex items-center justify-between p-4 bg-gray-800 text-white">
+    <header class="flex items-center justify-between p-4">
         <nav>
             <ul class="flex gap-2">
                 <li>
@@ -20,6 +20,10 @@ const isDark = computed({
                 </li>
                 <li>
                     <NuxtLink to="/login">Login</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="https://discord.gg/dutchanimecommunity" class="p-2 border rounded-lg font-bold"
+                        external>Join community</NuxtLink>
                 </li>
             </ul>
         </nav>

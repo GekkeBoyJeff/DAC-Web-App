@@ -18,6 +18,7 @@
     "@nuxtjs/supabase": "^1.5.2",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "@tailwindcss/vite": "^4.1.10",
+    "animejs": "^4.0.2",
     "eslint": "^9.29.0",
     "nuxt": "^3.17.5",
     "tailwindcss": "^4.1.10",

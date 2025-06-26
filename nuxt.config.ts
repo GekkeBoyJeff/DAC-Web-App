@@ -24,8 +24,8 @@ export default defineNuxtConfig({
         'success',
         'warning',
         'error'
-      ]
-    }
+      ],
+    },
   },
   app: {
     head: {

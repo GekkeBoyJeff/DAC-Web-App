@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-console.log('Footer component loaded')
+console.log('Footer component loaded');
 </script>
 
 <template>
@@ -9,12 +9,7 @@ console.log('Footer component loaded')
 				<p>Website gemaakt door:</p>
 			</li>
 			<li>
-				<a
-					href="https://jeffreyullers.nl"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="font-bold"
-				>Jeffrey
+				<a href="https://jeffreyullers.nl" target="_blank" rel="noopener noreferrer" class="font-bold">Jeffrey
 					Ullers</a>
 			</li>
 		</ul>

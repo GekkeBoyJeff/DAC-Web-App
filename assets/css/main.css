@@ -40,3 +40,17 @@
   --ui-warning: var(--color-DacYellow-500);
   --ui-error: #ef4444;
 }
+
+*,
+*:hover {
+  @apply cursor-none;
+}
+.cursor {
+  @apply w-5 h-5 rounded-full bg-DacBrown;
+  position: fixed;
+  top: 50.8%;
+  left: 49.6%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}

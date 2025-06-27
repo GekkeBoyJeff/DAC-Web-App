@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <Header />
-        <main class="min-h-[92vh]">
-            <slot />
-        </main>
-        <Footer />
-    </div>
+	<div>
+		<appHeader />
+		<main class="min-h-[92vh]">
+			<slot />
+		</main>
+		<appFooter />
+	</div>
 </template>

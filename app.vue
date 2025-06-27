@@ -2,10 +2,10 @@
 </script>
 
 <template>
-  <NuxtLayout>
-    <UApp>
-      <NuxtPage />
-      <div class="cursor"></div>
-    </UApp>
-  </NuxtLayout>
+	<NuxtLayout>
+		<UApp>
+			<NuxtPage />
+			<div class="cursor" />
+		</UApp>
+	</NuxtLayout>
 </template>

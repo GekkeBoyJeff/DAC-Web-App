@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-console.log('Footer component loaded');
 </script>
 
 <template>

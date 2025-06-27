@@ -9,6 +9,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/supabase',
 		'@pinia/nuxt',
+		'@nuxtjs/sitemap',
+		'@vite-pwa/nuxt',
 	],
 	devtools: { enabled: true },
 	app: {

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		'@nuxt/ui',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/supabase',
+		'@pinia/nuxt',
 	],
 	devtools: { enabled: true },
 	app: {

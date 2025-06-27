@@ -11,6 +11,8 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxtjs/sitemap',
 		'@vite-pwa/nuxt',
+		'@nuxtjs/seo',
+		'motion-v/nuxt'
 	],
 	devtools: { enabled: true },
 	app: {
@@ -39,6 +41,11 @@ export default defineNuxtConfig({
 				'error',
 			],
 		},
+	},
+	vite: {
+		server: {
+			allowedHosts: ['nearby-pigeon-touching.ngrok-free.app']
+		}
 	},
 	compatibilityDate: '2025-05-15',
 	eslint: {

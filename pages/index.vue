@@ -3,7 +3,7 @@
 </script>
 
 <template>
-	<section>
-		<p>home</p>
-	</section>
+	<div>
+		<heroSlider />
+	</div>
 </template>

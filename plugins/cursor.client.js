@@ -1,27 +1,31 @@
 import { createAnimatable } from 'animejs'
 
 export default defineNuxtPlugin(() => {
-	const $space = document.querySelector('body')
-	let bounds = $space.getBoundingClientRect()
-	const refreshBounds = () => (bounds = $space.getBoundingClientRect())
+    const initialX = window.innerWidth / 2
+    const initialY = window.innerHeight / 2
 
-	const circle = createAnimatable('.cursor', {
-		x: 500,
-		y: 500,
+    const circle = createAnimatable('.cursor', {
+		x: initialX,
+		y: initialY,
 		backgroundColor: 0,
-		ease: 'out(3)',
+		ease: 'out(15)',
+	})
+
+    const circleRing = createAnimatable('.cursor-circle', {
+		x: initialX,
+		y: initialY,
+		backgroundColor: 0,
+		ease: 'outQuart',
 	})
 
 	const onMouseMove = (e) => {
-		const { width, height, left, top } = bounds
-		const centerX = width / 2
-		const centerY = height / 2
-		const x = e.clientX - left - centerX
-		const y = e.clientY - top - centerY
+		const x = e.clientX
+		const y = e.clientY 
 		circle.x(x)
 		circle.y(y)
+		circleRing.x(x)
+		circleRing.y(y)
 	}
 
 	window.addEventListener('mousemove', onMouseMove)
-	window.addEventListener('resize', refreshBounds)
 })

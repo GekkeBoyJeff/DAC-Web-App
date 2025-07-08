@@ -6,6 +6,7 @@
 		<UApp>
 			<NuxtPage />
 			<div class="cursor" />
+			<div class="cursor-circle" />
 		</UApp>
 	</NuxtLayout>
 </template>

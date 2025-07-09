@@ -45,14 +45,9 @@
   @apply cursor-none;
 }
 .cursor {
-  @apply w-2 h-2 rounded-full bg-DacBrown;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
+  @apply w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50;
 }
 
 .cursor-circle{
-  @apply w-6 h-6 rounded-full border-2 border-DacBrown fixed z-50 -top-2 -left-2 pointer-events-none
+  @apply w-6 h-6 rounded-full border-2 border-DacBrown fixed z-50 -top-2 -left-2 pointer-events-none;
 }

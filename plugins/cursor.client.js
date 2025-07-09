@@ -5,18 +5,28 @@ export default defineNuxtPlugin(() => {
     const initialY = window.innerHeight / 2
 
     const circle = createAnimatable('.cursor', {
+        width: 8,
+        height: 8,
 		x: initialX,
 		y: initialY,
-		backgroundColor: 0,
 		ease: 'out(15)',
 	})
 
     const circleRing = createAnimatable('.cursor-circle', {
-		x: initialX,
+        x: initialX,
 		y: initialY,
-		backgroundColor: 0,
 		ease: 'outQuart',
-	})
+    })
+    
+    const shrinkCursor = () => {
+        circle.width(8)
+        circle.height(8)
+    }
+
+    const growCursor = () => {
+        circle.width(20)
+        circle.height(20)
+    }
 
 	const onMouseMove = (e) => {
 		const x = e.clientX
@@ -27,5 +37,12 @@ export default defineNuxtPlugin(() => {
 		circleRing.y(y)
 	}
 
-	window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mousemove', onMouseMove)
+    
+    const links = document.querySelectorAll('a, button, input[type="submit"], input[type="button"]')
+
+    links.forEach(link => {
+        link.addEventListener('mouseover', growCursor)
+        link.addEventListener('mouseout', shrinkCursor)
+    })
 })

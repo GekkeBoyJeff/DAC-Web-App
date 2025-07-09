@@ -34,17 +34,23 @@ export default defineNuxtPlugin(() => {
     }
 
     const growCursor = async () => {
-        overGrowCursor()
-        shrinkCursorRing()
+        // overGrowCursor()
+        // shrinkCursorRing()
+        overGrowCursorRing()
         setTimeout(() => {
-            circle.height(24, 300, 'outQuart')
-            circle.width(24, 300, 'outQuart')
-        }, 300)
+            circle.height(0, 300, 'outQuart')
+            circle.width(0, 300, 'outQuart')
+        }, 100)
     }
 
     const overGrowCursor = () => {
         circle.height(30, 300, 'outQuart')
         circle.width(30, 300, 'outQuart')
+    }
+
+    const overGrowCursorRing = () => {
+        circleRing.width(40, 300, 'out')
+        circleRing.height(40, 300, 'out')
     }
 
     const growCursorRing = () => {

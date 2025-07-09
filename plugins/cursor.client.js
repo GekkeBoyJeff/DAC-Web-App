@@ -9,23 +9,47 @@ export default defineNuxtPlugin(() => {
         height: 8,
 		x: initialX,
 		y: initialY,
-		ease: 'out(15)',
+        ease: 'out(15)',
+        duration: 100,
 	})
 
     const circleRing = createAnimatable('.cursor-circle', {
+        width: 24,
+        height: 24,
         x: initialX,
 		y: initialY,
-		ease: 'outQuart',
+        ease: 'outQuart',
+        duration: 300,
     })
     
     const shrinkCursor = () => {
-        circle.width(8)
-        circle.height(8)
+        growCursorRing()
+        circle.width(8, 100, 'out')
+        circle.height(8, 100, 'out')
     }
 
-    const growCursor = () => {
-        circle.width(20)
-        circle.height(20)
+    const shrinkCursorRing = () => {
+        circleRing.width(0, 100, 'out')
+        circleRing.height(0, 100, 'out')
+    }
+
+    const growCursor = async () => {
+        overGrowCursor()
+        shrinkCursorRing()
+        setTimeout(() => {
+            circle.height(24, 300, 'outQuart')
+            circle.width(24, 300, 'outQuart')
+        }, 300)
+    }
+
+    const overGrowCursor = () => {
+        circle.height(30, 300, 'outQuart')
+        circle.width(30, 300, 'outQuart')
+    }
+
+    const growCursorRing = () => {
+        circleRing.width(24, 300, 'out')
+        circleRing.height(24, 300, 'out')
     }
 
 	const onMouseMove = (e) => {

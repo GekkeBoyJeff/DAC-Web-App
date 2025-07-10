@@ -48,5 +48,14 @@
   @apply w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
 }
 .cursor-circle {
-  @apply w-6 h-6 rounded-full border-1 fixed pointer-events-none top-0 left-0 border-DacBrown z-40 transform -translate-x-1/2 -translate-y-1/2;
+  @apply w-6 h-6 rounded-full border-1 fixed pointer-events-none top-0 left-0 border-DacBrown z-40 transform -translate-x-1/2 -translate-y-1/2 bg-black/20;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cursor {
+    background-color: var(--color-DacWhite);
+  }
+  .cursor-circle {
+    border-color: var(--color-DacWhite);
+  }
 }

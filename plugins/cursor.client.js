@@ -1,5 +1,10 @@
 import { createAnimatable } from 'animejs'
 
+// TODO: Animatie on click toevoegen
+// ik denk dat ik een soort van pop effect wil maken waarbij de buitenste ring verdwijnt en de binnenste ring terugkomt. 
+// Daarna moet er als soort van vuurwerk waarbij er allemaal kleine strepen uit de ring komen. en je uiteindelijk het DAC logo ziet verschijnen (strikje)
+// Hierna moet het weer veranderen naar de normale cursor
+
 export default defineNuxtPlugin(() => {
     const initialX = window.innerWidth / 2
     const initialY = window.innerHeight / 2
@@ -22,38 +27,28 @@ export default defineNuxtPlugin(() => {
         duration: 300,
     })
     
-    const shrinkCursor = () => {
-        growCursorRing()
+    const resetCursor = () => {
+        setRingToNormalSize()
         circle.width(8, 100, 'out')
         circle.height(8, 100, 'out')
     }
 
-    const shrinkCursorRing = () => {
-        circleRing.width(0, 100, 'out')
-        circleRing.height(0, 100, 'out')
-    }
-
-    const growCursor = async () => {
-        // overGrowCursor()
-        // shrinkCursorRing()
-        overGrowCursorRing()
+    const expandCursorOnHover = async () => {
+        setRingToLargeSize()
+        circle.height(0, 300, 'outQuart')
+        circle.width(0, 300, 'outQuart')
         setTimeout(() => {
-            circle.height(0, 300, 'outQuart')
-            circle.width(0, 300, 'outQuart')
-        }, 100)
+            circleRing.width(40, 300, 'outBack')
+            circleRing.height(40, 300, 'outBack')
+        }, 200)
     }
 
-    const overGrowCursor = () => {
-        circle.height(30, 300, 'outQuart')
-        circle.width(30, 300, 'outQuart')
+    const setRingToLargeSize = () => {
+        circleRing.width(50, 300, 'outExpo')
+        circleRing.height(50, 300, 'outExpo')
     }
 
-    const overGrowCursorRing = () => {
-        circleRing.width(40, 300, 'out')
-        circleRing.height(40, 300, 'out')
-    }
-
-    const growCursorRing = () => {
+    const setRingToNormalSize = () => {
         circleRing.width(24, 300, 'out')
         circleRing.height(24, 300, 'out')
     }
@@ -72,7 +67,7 @@ export default defineNuxtPlugin(() => {
     const links = document.querySelectorAll('a, button, input[type="submit"], input[type="button"]')
 
     links.forEach(link => {
-        link.addEventListener('mouseover', growCursor)
-        link.addEventListener('mouseout', shrinkCursor)
+        link.addEventListener('mouseover', expandCursorOnHover)
+        link.addEventListener('mouseout', resetCursor)
     })
 })

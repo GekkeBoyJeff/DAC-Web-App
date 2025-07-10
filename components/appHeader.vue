@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const colorMode = useColorMode()
 
+// TODO: header pill maken on scroll
+
 const isDark = computed({
 	get() {
 		return colorMode.value === 'dark'

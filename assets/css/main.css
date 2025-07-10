@@ -64,22 +64,6 @@
 
 /* Cursor End */
 
-/* header */
-
-.header-scrolled{
-  @apply top-4 ease-out translate-x-0 bg-DacWhite/0
-}
-
-.header-scrolled nav {
-  @apply rounded-full transition-all duration-300 backdrop-blur-xs translate-x-full bg-DacWhite/15
-}
-
-.header-scrolled nav ul {
-  @apply justify-center;
-}
-
-/* header end */
-
 body{
   background:radial-gradient(125% 125% at 50% 90%, #f1f1f1 40%, #f8c366 100%); 
   background-size: 100% 100%

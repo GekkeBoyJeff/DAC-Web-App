@@ -1,44 +1,29 @@
 <script lang="ts" setup>
-const header = ref<HTMLElement | null>(null)
-const nav = ref<HTMLElement | null>(null)
+import type { NavigationMenuItem } from '@nuxt/ui'
 
-const onScroll = () => {
-  if (header.value) {
-    if (window.scrollY > 1) {
-    	header.value.classList.add('header-scrolled')
-    } else {
-		header.value.classList.remove('header-scrolled')
-    }
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll)
-})
-
+import { navigationItems } from '../utils/navigation'
 
 </script>
 
 <template>
-  <header ref="header" class="grid grid-cols-12 items-top top-4 left-0 z-10 w-full fixed h-20 bg-DacWhite/15 px-4">
-	<nav ref="nav" class="p-4 items-center translate-x-0 duration-500 md:col-span-4 flex">
-		<ul class="flex gap-6 text-DacBlack align-middle w-full">
-			<li>
-				<NuxtLink to="/">Home</NuxtLink>
-			</li>
-			<li>
-				<NuxtLink to="/login">Login</NuxtLink>
-			</li>
-			<li class="sr-only">
-				<NuxtLink to="https://discord.gg/dutchanimecommunity" class="p-2 border rounded-lg font-bold" external>Join community</NuxtLink>
-			</li>
-		</ul>
+  <header ref="header" class="z-10 w-full fixed h-20 px-4 top-4 flex justify-between items-center ">
+	<div class="flex items-center justify-between">
+		<NuxtLink to="/" class="text-2xl font-bold text-DacBlack"><img src="" alt="DAC Logo" class="h-12 w-12 rounded-full"></NuxtLink>
+	</div>
+	<nav ref="nav" class="p-4 items-center translate-x-0 duration-500 md:col-span-4 flex bg-DacBlack/25 backdrop-blur-xs rounded-md w-fit">
+		  <UNavigationMenu
+			color="secondary"
+			orientation="horizontal"
+			:variant="'link'"
+			:items="navigationItems">
+			<template #item="{ item }">
+			  <NuxtLink :to="item.to" class="text-DacBlack hover:text-DacWhite" active-class="font-bold">
+				{{ item.label }}
+			  </NuxtLink>
+			</template>
+		</UNavigationMenu>
 	</nav>
-	<div class="p-2 border rounded-lg font-bold h-10 self-center md:col-span-2 lg:col-span-1 md:col-start-11 lg:col-start-12 text-center">
+	<div class="p-2 border rounded-lg font-bold h-10 self-center text-center">
 		<NuxtLink to="https://discord.gg/dutchanimecommunity" external>Word lid!</NuxtLink>
 	</div>
   </header>

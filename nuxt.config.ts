@@ -40,6 +40,11 @@ export default defineNuxtConfig({
         },
     },
     css: ['~/assets/css/main.css'],
+    alias: {
+        '~utils': '/utils',
+        '~components': '/components',
+        '~assets': '/assets',
+    },
     ui: {
         theme: {
             colors: [

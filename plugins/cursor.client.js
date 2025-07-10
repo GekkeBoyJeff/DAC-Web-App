@@ -64,7 +64,7 @@ export default defineNuxtPlugin(() => {
 
     window.addEventListener('mousemove', onMouseMove)
     
-    const links = document.querySelectorAll('a, button, input[type="submit"], input[type="button"]')
+    const links = document.querySelectorAll('a, button, input[type="submit"], input[type="button"], a>span')
 
     links.forEach(link => {
         link.addEventListener('mouseover', expandCursorOnHover)

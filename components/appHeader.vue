@@ -10,7 +10,6 @@ import { navigationItems } from '../utils/navigation'
 	<div class="flex items-center justify-between">
 		<NuxtLink to="/" class="text-2xl font-bold text-DacBlack"><img src="" alt="DAC Logo" class="h-12 w-12 rounded-full"></NuxtLink>
 	</div>
-	<nav ref="nav" class="p-4 items-center translate-x-0 duration-500 md:col-span-4 flex bg-DacBlack/25 backdrop-blur-xs rounded-md w-fit">
 		  <UNavigationMenu
 			color="secondary"
 			orientation="horizontal"
@@ -22,7 +21,6 @@ import { navigationItems } from '../utils/navigation'
 			  </NuxtLink>
 			</template>
 		</UNavigationMenu>
-	</nav>
 	<div class="p-2 border rounded-lg font-bold h-10 self-center text-center">
 		<NuxtLink to="https://discord.gg/dutchanimecommunity" external>Word lid!</NuxtLink>
 	</div>

@@ -3,6 +3,19 @@ import { navigationItems } from '../utils/navigation'
 
 const toggleNav = () => {
 	console.log('Toggle navigation')
+	const nav = document.querySelector('nav')
+	const navList = document.querySelector('nav > ul')
+
+	if (nav) {
+		nav.classList.toggle('slideNavLeft')
+		setTimeout(() => {
+			navList?.classList.toggle('hidden')
+		}, parseInt(getComputedStyle(nav).getPropertyValue('--nav-duration'), 10))
+		setTimeout(() => {
+			nav.classList.toggle('slideTransformSize')
+			nav.classList.toggle('slideNavLeft')
+		}, (parseInt(getComputedStyle(nav).getPropertyValue('--nav-duration')) - 50))
+	}
 };
 
 </script>

@@ -36,7 +36,10 @@ export default defineNuxtConfig({
                 rel: 'icon',
                 type: 'image/x-icon',
                 href: '/favicon.ico'
-            }, ],
+            },],
+            bodyAttrs: {
+                class: 'bg-DacWhite text-DacBlack'
+            }
         },
     },
     css: ['~/assets/css/main.css'],

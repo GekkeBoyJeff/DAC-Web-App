@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { navigationItems } from '../utils/navigation'
 
+// TODO: kruisje groter maken voor mobiel. ik klik vaak mis
+
 const navRef = ref<HTMLElement | null>(null)
 const navListRef = ref<HTMLElement | null>(null)
 const navButtonRef = ref<HTMLElement | null>(null)

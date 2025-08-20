@@ -31,9 +31,9 @@ export const navigationItems = [
     icon: 'i-lucide:mail',
     to: '/contact',
   },
-  {
-    label: 'Login',
-    icon: 'i-lucide:user-check',
-    to: '/login',
-  },
+  // {
+  //   label: 'Login',
+  //   icon: 'i-lucide:user-check',
+  //   to: '/login',
+  // },
 ]

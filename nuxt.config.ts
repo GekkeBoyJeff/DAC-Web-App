@@ -22,7 +22,7 @@ export default defineNuxtConfig({
             title: 'Dutch Anime Community',
             meta: [{
                     name: 'viewport',
-                    content: 'width=device-width, initial-scale=1'
+                    content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover'
                 },
                 {
                     charset: 'utf-8'

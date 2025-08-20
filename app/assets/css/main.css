@@ -28,9 +28,11 @@
   --color-DacWhite-800: #e0e4eb;
   --color-DacWhite-900: #f0f1f5;
 
+  --darkTransparent: rgba(0 0 0 / 0.4);
+
   --color-DacPurple: rgb(166 129 255 / 1);
 
-  --nav-duration: 700ms;
+  --nav-duration: 350ms;
 }
 
 :root {
@@ -49,10 +51,10 @@
   @apply cursor-none;
 }
 .cursor {
-  @apply w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
+  @apply hidden sm:flex w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
 }
 .cursor-circle {
-  @apply w-6 h-6 rounded-full border-1 fixed pointer-events-none top-0 left-0 border-DacBrown z-40 transform -translate-x-1/2 -translate-y-1/2 bg-black/20;
+  @apply hidden sm:flex w-6 h-6 rounded-full border-1 fixed pointer-events-none top-0 left-0 border-DacBrown z-40 transform -translate-x-1/2 -translate-y-1/2 bg-black/20;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,7 +74,7 @@ body{
 }
 
 body>div{
-  @apply w-[calc(100dvw-1.5rem)] m-auto rounded-4xl overflow-hidden;
+  @apply sm:w-[calc(100dvw-1.5rem)] m-auto rounded-4xl overflow-hidden;
 }
 
 .corner {
@@ -96,9 +98,38 @@ body>div{
 }
 
 .slideNavLeft{
-  @apply -translate-x-[100vw] duration-[var(--nav-duration)];
+  @apply -translate-x-[100vw] duration-1000;
 }
 
 .slideTransformSize{
-  @apply absolute -top-4 left-0 w-[60dvw] h-[100dvh] bg-DacWhite z-50 flex flex-col items-center justify-center gap-4 rounded-[0_1em_1em_0];
+  @apply absolute -top-4 left-0 w-[60dvw] h-[100dvh] bg-DacWhite flex flex-col items-center justify-start gap-4 rounded-[0_1em_1em_0] pt-30;
+}
+
+.slideTransformSize .nav-overlay{
+  @apply opacity-100 pointer-events-auto bg-[rgba(0,0,0,0.4)];
+}
+
+nav .mobileView{
+  @apply flex flex-col items-center justify-center gap-4 w-full;
+}
+
+nav .mobileView li{
+  @apply w-full text-left;
+}
+
+nav .closeButton{
+  @apply absolute top-8 right-8
+}
+
+@theme{
+  --animate-myWiggle: wiggle 10s linear infinite;
+
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
 }

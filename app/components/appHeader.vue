@@ -86,7 +86,7 @@ const handleNavClick = (event: Event) => {
 	<header
 		class="z-10 fixed h-20 px-4 flex justify-between items-center w-full sm:w-[calc(100%-1.5rem)] text-dacWhite border-t-[1em] border-DacWhite">
 		<div
-			class="flex items-center gap-2 md:pt-0 bg-DacWhite md:bg-transparent h-16 md:h-auto mt-8 pt-0 rounded-full min-w-48">
+			class="flex items-center gap-2 md:pt-0 sm:bg-DacWhite md:bg-transparent h-16 md:h-auto mt-8 pt-0 rounded-full min-w-48">
 			<div class="flex items-center justify-between">
 				<NuxtLink to="/" class="text-md font-bold text-DacBlack bg-DacWhite p-1 rounded-full z-50 flex gap-2">
 					<NuxtImg src="/images/logo.png" alt="DAC Logo" class="h-14 w-14 rounded-full animate-myWiggle" />
@@ -94,7 +94,7 @@ const handleNavClick = (event: Event) => {
 				</NuxtLink>
 			</div>
 			<nav ref="navRef"
-				class="bg-DacWhite relative p-4 px-4 rounded-full flex transition duration-700 md:hover:scale-100 z-10"
+				class="bg-DacWhite relative p-4 px-4 rounded-full flex transition duration-700 md:hover:scale-100 z-10 h-16 md:h-auto w-30 md:w-auto"
 				@click="handleNavClick">
 
 				<!-- Overlay element for closing nav when clicked -->
@@ -128,11 +128,12 @@ const handleNavClick = (event: Event) => {
 					<span>Menu</span>
 				</button>
 
-				<ul class="gap-4 hidden md:flex" ref="navListRef">
+				<ul class="gap-4 hidden md:flex landscape:flex-row landscape:flex-wrap landscape:gap-2 md:gap-4 flex-col md:flex-row"
+					ref="navListRef">
 					<li v-for="item in navigationItems" :key="item.to"
-						class="hover:scale-[1.05] hover:font-bold transition has-[.active]:hover:scale-100 h-10 md:h-unset content-center">
+						class="landscape:flex-1/3 md:landscape:flex-[unset] hover:scale-[1.05] hover:font-bold transition has-[.active]:hover:scale-100 h-10 md:h-unset content-center">
 						<NuxtLink :to="item.to" class="text-DacBlack flex items-center gap-2"
-							active-class="font-bold bg-black p-2 text-DacWhite rounded-full active">
+							active-class="font-bold bg-black p-2 text-DacWhite rounded-md md:rounded-full active">
 							<span class="md:hidden flex">
 								<UIcon :name="item.icon" class="w-5 h-5" />
 							</span>

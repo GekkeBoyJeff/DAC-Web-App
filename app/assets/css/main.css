@@ -48,7 +48,7 @@
 /* Cursor */
 
 *{
-  @apply cursor-none;
+  @apply sm:cursor-none;
 }
 .cursor {
   @apply hidden sm:flex w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
@@ -110,7 +110,7 @@ body>div{
 }
 
 nav .mobileView{
-  @apply flex flex-col items-center justify-center gap-4 w-full;
+  @apply flex items-center justify-center gap-4 w-full;
 }
 
 nav .mobileView li{
@@ -132,4 +132,8 @@ nav .closeButton{
     100% { transform: rotate(0deg); }
   }
 
+}
+
+@theme {
+  --breakpoint-landscape: (orientation: landscape);
 }

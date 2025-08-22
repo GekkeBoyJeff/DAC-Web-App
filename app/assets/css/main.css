@@ -110,7 +110,7 @@ body>div{
 }
 
 nav .mobileView{
-  @apply flex items-center justify-center gap-4 w-full;
+  @apply flex items-center justify-center gap-2 w-full;
 }
 
 nav .mobileView li{

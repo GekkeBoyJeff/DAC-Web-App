@@ -3,7 +3,5 @@
 </script>
 
 <template>
-	<div>
-		<heroSlider />
-	</div>
+	<heroSlider />
 </template>

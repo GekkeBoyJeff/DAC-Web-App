@@ -86,7 +86,7 @@ body>div{
 }
 
 .corner.top-left{
-  @apply top-0 -left-0 rotate-270;
+  @apply top-0 -left-0 rotate-270 h-8;
 }
 
 .corner.right{
@@ -97,28 +97,43 @@ body>div{
   @apply -bottom-8 left-0;
 }
 
-.slideNavLeft{
-  @apply -translate-x-[100vw] duration-1000;
+.show-nav{
+  @apply absolute left-0 w-[100dvw] rounded-[0_0_1rem_1rem] top-0 h-full;
 }
 
-.slideTransformSize{
-  @apply absolute -top-4 left-0 w-[60dvw] h-[100dvh] bg-DacWhite flex flex-col items-center justify-start gap-4 rounded-[0_1em_1em_0] pt-30;
+.show-nav .toggle-button{
+  @apply absolute top-0 right-8 opacity-0
 }
 
-.slideTransformSize .nav-overlay{
-  @apply opacity-100 pointer-events-auto bg-[rgba(0,0,0,0.4)];
+.show-nav nav{
+  @apply h-auto;
 }
 
-nav .mobileView{
-  @apply flex items-center justify-center gap-2 w-full;
+.show-nav nav ul{
+  @apply mt-18 flex flex-wrap flex-row
 }
 
-nav .mobileView li{
-  @apply w-full text-left;
+.nav-overlay{
+  @apply opacity-0 pointer-events-none bg-[rgba(0,0,0,0.4)] h-[100dvh] w-[100dvw] sm:-left-3 -top-4 left-0;
 }
-
 nav .closeButton{
   @apply absolute top-8 right-8
+}
+
+.item-active{
+  @apply invert-100 duration-75;
+}
+
+.show-nav .logo{
+  @apply absolute top-4 left-4
+}
+
+.show-nav .active-tracker{
+  @apply rounded-lg;
+}
+
+.show-nav .tag{
+  display:flex;
 }
 
 @theme{
@@ -131,7 +146,6 @@ nav .closeButton{
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
   }
-
 }
 
 @theme {

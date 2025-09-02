@@ -4,4 +4,5 @@
 
 <template>
 	<heroSlider />
+	<SectionTest />
 </template>

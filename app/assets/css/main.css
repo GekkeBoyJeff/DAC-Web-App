@@ -32,7 +32,7 @@
 
   --color-DacPurple: rgb(166 129 255 / 1);
 
-  --nav-duration: 350ms;
+  --nav-duration: 200ms;
 }
 
 :root {
@@ -49,6 +49,10 @@
 
 *{
   @apply sm:cursor-none;
+}
+
+a{
+  line-height: normal;
 }
 .cursor {
   @apply hidden sm:flex w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
@@ -74,11 +78,31 @@ body{
 }
 
 body>div{
-  @apply sm:w-[calc(100dvw-1.5rem)] m-auto rounded-4xl overflow-hidden;
+  @apply sm:w-[calc(100%-1.5rem)] m-auto rounded-4xl overflow-hidden;
+}
+
+header .corners, header .corner{
+  @apply -mt-0.5
+}
+
+.addon{
+  @apply -mb-0.5
+}
+
+.hero::after{
+  @apply bottom-0 left-0 absolute w-full h-4/5;
+  content: '';
+  background: linear-gradient(0deg, #c1a44f 0%, transparent 100%);
+}
+
+.hero div{
+  @apply z-10
 }
 
 .corner {
-	@apply absolute aspect-square h-1/2 bg-[radial-gradient(circle_at_0%_100%,_transparent_2em,_white_2em)];
+	@apply absolute aspect-square h-1/2;
+  --corner-color: white;
+  background-image: radial-gradient(circle at 0% 100%, transparent 2em, var(--corner-color) 2em);
 }
 
 .corner.left{
@@ -97,8 +121,22 @@ body>div{
   @apply -bottom-8 left-0;
 }
 
+.corner-rotate-180{
+  @apply rotate-180;
+  background-image: radial-gradient(circle at 0% 100%, transparent 2.5em, var(--corner-color) 2.5em);
+}
+
+.corner-rotate-90{
+  @apply rotate-90;
+  background-image: radial-gradient(circle at 0% 100%, transparent 2.5em, var(--corner-color) 2.5em);
+}
+
+.corner.yellow {
+  --corner-color: var(--color-DacYellow-100);
+}
+
 .show-nav{
-  @apply absolute left-0 w-[100dvw] rounded-[0_0_1rem_1rem] top-0 h-full;
+  @apply fixed left-0 w-full rounded-[0_0_1rem_1rem] top-0 h-full;
 }
 
 .show-nav .toggle-button{
@@ -128,12 +166,20 @@ nav .closeButton{
   @apply absolute top-4 left-4
 }
 
+/* nav .active-tracker{
+  @apply duration-[0ms]
+} */
+
 .show-nav .active-tracker{
-  @apply rounded-lg;
+  @apply rounded-lg
 }
 
 .show-nav .tag{
   display:flex;
+}
+
+.r-clip{
+  clip-path: polygon(0% 14.52%, 27.28% 48.48%, 37.46% 58.2%, 55.64% 72.92%, 98.38% 100%, 0% 100%, 0% 30.25%);
 }
 
 @theme{
@@ -150,4 +196,5 @@ nav .closeButton{
 
 @theme {
   --breakpoint-landscape: (orientation: landscape);
+  --breakpoint-mobile: (max-width: 640px);
 }

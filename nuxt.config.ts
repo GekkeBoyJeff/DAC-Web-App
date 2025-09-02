@@ -38,7 +38,7 @@ export default defineNuxtConfig({
                 href: '/favicon.ico'
             },],
             bodyAttrs: {
-                class: 'bg-DacWhite text-DacBlack'
+                class: 'bg-DacWhite text-DacBlack max-w-[120rem] m-auto self-center'
             }
         },
     },

@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { navigationItems } from '../utils/navigation'
 
-// TODO: kruisje groter maken voor mobiel. ik klik vaak mis
-
 const headerRef = ref<HTMLElement | null>(null)
 const navListRef = ref<HTMLElement | null>(null)
 const navRef = ref<HTMLElement | null>(null)
@@ -46,7 +44,7 @@ const startAnimation = async () => {
 			headerRef.value?.classList.add('show-nav')
 			moveActiveBackground()
 			moveNavIntoView()
-			navParentRef.value.classList.toggle('m-[0_auto]')
+			navParentRef.value?.classList.toggle('m-[0_auto]')
 			navParentRef.value?.classList.toggle('mt-4')
 		}, getAnimationDuration())
 		setTimeout(() => {
@@ -62,7 +60,7 @@ const startAnimation = async () => {
 			headerRef.value?.classList.remove('show-nav')
 			nav?.classList.remove('show-nav')
 			nav?.classList.toggle('toggleButton')
-			navParentRef.value.classList.toggle('m-[0_auto]')
+			navParentRef.value?.classList.toggle('m-[0_auto]')
 			navParentRef.value?.classList.toggle('mt-4')
 			adspaceRef.value?.classList.toggle('h-full')
 			moveActiveBackground()
@@ -147,7 +145,7 @@ watch(() => route.path, () => {
 
 <template>
 	<header ref="headerRef"
-		class="pointer-none z-10 fixed h-20 px-4 flex md:justify-between md:items-center w-full sm:w-[calc(100%-1.5rem)] text-dacWhite border-t-[1em] border-DacWhite">
+		class=" pointer-none z-20 fixed h-20 px-4 flex md:justify-between md:items-center w-full sm:w-[calc(100%-1.5rem)] max-w-[120rem] text-dacWhite border-t-[1em] border-DacWhite">
 		<div ref="navParentRef"
 			class="flex z-20 items-center gap-2 md:pt-0 sm:bg-DacWhite md:bg-transparent h-16 md:h-auto mt-4 md:mt-8 pt-0 rounded-full min-w-48 -translate-x-[100dvw] transition duration-500">
 			<div ref="navChildRef" class="flex items-center justify-between transition duration-500">
@@ -169,31 +167,18 @@ watch(() => route.path, () => {
 							<path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
 						</g>
 					</svg>
-					<!-- Close icon (X) -->
-					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-						class="w-6 close-icon hidden">
-						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-						<g id="SVGRepo_iconCarrier">
-							<path d="M18 6L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round"
-								stroke-linejoin="round"></path>
-							<path d="M6 6L18 18" stroke="#000000" stroke-width="2" stroke-linecap="round"
-								stroke-linejoin="round"></path>
-						</g>
-					</svg>
-
 					<span>Menu</span>
 				</button>
 				<div class="w-full relative pointer-events-none md:pointer-events-auto md:h-8">
 					<span ref="activeTracker"
-						class="absolute h-8 left-0 rounded-4xl backdrop-invert-100 transition-all duration-300 ease-in-out active-tracker">
+						class="duration-[0ms] absolute h-8 left-0 rounded-4xl backdrop-invert-100 transition-all md:duration-300 ease-in-out active-tracker">
 					</span>
 					<ul class="pointer-events-auto hidden md:flex landscape:flex-row landscape:flex-wrap landscape:gap-2 md:gap-2 flex-col md:flex-row"
 						ref="navListRef">
 						<li v-for="item in navigationItems" :key="item.to"
 							class="flex-1 basis-1/2 md:flex-none md:basis-auto md:basis:unset landscape:flex-1/3 md:landscape:flex-[unset] hover:scale-[1.05] hover:font-bold transition has-[.active]:hover:scale-100 content-center z-10 md:h-8">
 							<NuxtLink :to="item.to" class="flex items-center gap-2 p-4 md:p-1"
-								activeClass="font-bold p-2 rounded-md md:rounded-full item-active"
+								activeClass="font-bold p-2 rounded-md md:rounded-full item-active scale-95"
 								@click="handleNavItemClick">
 								<span class="md:hidden flex show-tag">
 									<UIcon :name="item.icon" class="w-5 h-5" />

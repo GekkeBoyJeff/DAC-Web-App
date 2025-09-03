@@ -30,8 +30,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Clean up for oxc-parser issue
+        run: |
+          rm -rf node_modules package-lock.json
+          
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Static HTML export with Nuxt
         run: npm run generate

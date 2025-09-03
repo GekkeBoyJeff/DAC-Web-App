@@ -139,4 +139,7 @@ export default defineNuxtConfig({
     robots: {
         robotsTxt: false
     },
+    linkChecker: {
+        enabled: false
+    },
 })

@@ -14,8 +14,9 @@ const adspaceRef = ref<HTMLElement | null>(null)
 let isDown = false
 
 const getAnimationDuration = () => {
-	if (!headerRef.value) return 0
-	return parseInt(getComputedStyle(headerRef.value).getPropertyValue('--nav-duration'))
+	if (!headerRef.value) return 200 // fallback waarde
+	const duration = getComputedStyle(headerRef.value).getPropertyValue('--nav-duration')
+	return parseInt(duration) || 200 // fallback als parsing faalt
 }
 
 const toggleNav = async () => {

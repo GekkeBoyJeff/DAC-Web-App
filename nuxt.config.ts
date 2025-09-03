@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         enabled: true
     },
     site: {
-        url: 'https://dutchanimecommunity.nl', // Vervang dit door je echte website URL
+        url: 'https://dutchanimecommunity.nl',
         name: 'Dutch Anime Community',
         description: 'Welkom bij de grootste anime community van Nederland'
     },

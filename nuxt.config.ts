@@ -14,6 +14,9 @@ export default defineNuxtConfig({
         '@nuxtjs/seo',
         'motion-v/nuxt'
     ],
+    build: {
+        transpile: ['@nuxt/image']
+    },
     devtools: {
         enabled: true
     },
@@ -66,9 +69,21 @@ export default defineNuxtConfig({
             ],
         },
     },
+    components: {
+        global: true,
+        dirs: ['~/components']
+    },
     vite: {
         server: {
             allowedHosts: ['nearby-pigeon-touching.ngrok-free.app']
+        },
+        build: {
+            rollupOptions: {
+                external: []
+            }
+        },
+        optimizeDeps: {
+            include: ['@nuxt/image']
         }
     },
     image: {

@@ -23,7 +23,7 @@ const slides = [
                 <h2 class="text-4xl font-bold">{{ slide.name }}</h2>
                 <p>{{ slide.description }}</p>
                 <nuxt-link :to="slide.link" class="bg-DacWhite p-4 text-DacBlack rounded-full w-fit">{{ slide.linkText
-                }}</nuxt-link>
+                    }}</nuxt-link>
             </div>
             <div
                 class="col-span-6 -row-start-3 md:-row-start-2 md:col-start-6 md:p-0 col-start-1 md:-mx-8 md:mb-4 md:-mt-4">

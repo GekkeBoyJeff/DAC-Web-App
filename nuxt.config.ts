@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         enabled: true
     },
     site: {
-        url: process.env.NUXT_APP_BASE_URL || 'https://gekkeboyjeff.github.io/DAC-Web-App/',
+        url: process.env.NUXT_APP_BASE_URL || 'https://gekkeboyjeff.github.io',
         name: 'Dutch Anime Community',
         description: 'Welkom bij de grootste anime community van Nederland'
     },
@@ -135,5 +135,8 @@ export default defineNuxtConfig({
             exclude: [],
             saveRedirectToCookie: false,
         },
+    },
+    robots: {
+        robotsTxt: false
     },
 })

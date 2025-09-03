@@ -1,6 +1,6 @@
 <template>
 	<appHeader />
-	<main class="min-h-[92vh] bg-DacYellow-100">
+	<main class="min-h-[92vh]">
 		<slot />
 	</main>
 	<appFooter />

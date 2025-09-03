@@ -50,6 +50,7 @@ const startAnimation = async () => {
 		setTimeout(() => {
 			tagRef.value?.classList.toggle('hidden')
 			adspaceRef.value?.classList.toggle('h-full')
+			adspaceRef.value?.classList.toggle('hidden')
 
 		}, getAnimationDuration() + 300)
 		isDown = true
@@ -63,6 +64,7 @@ const startAnimation = async () => {
 			navParentRef.value?.classList.toggle('m-[0_auto]')
 			navParentRef.value?.classList.toggle('mt-4')
 			adspaceRef.value?.classList.toggle('h-full')
+			adspaceRef.value?.classList.toggle('hidden')
 			moveActiveBackground()
 			moveNavIntoView()
 		}, getAnimationDuration())
@@ -145,17 +147,17 @@ watch(() => route.path, () => {
 
 <template>
 	<header ref="headerRef"
-		class=" pointer-none z-20 fixed h-20 px-4 flex md:justify-between md:items-center w-full sm:w-[calc(100%-1.5rem)] max-w-[120rem] text-dacWhite border-t-[1em] border-DacWhite">
+		class="drop-shadow-md md:drop-shadow-none pointer-none z-20 fixed h-20 px-4 flex md:justify-between md:items-center w-full sm:w-[calc(100%-1.5rem)] max-w-[120rem] text-dacWhite border-t-[1em] border-DacWhite">
 		<div ref="navParentRef"
 			class="flex z-20 items-center gap-2 md:pt-0 sm:bg-DacWhite md:bg-transparent h-16 md:h-auto mt-4 md:mt-8 pt-0 rounded-full min-w-48 -translate-x-[100dvw] transition duration-500">
-			<div ref="navChildRef" class="flex items-center justify-between transition duration-500">
+			<div ref="navChildRef" class="flex items-center justify-between transition duration-500 md:drop-shadow-md">
 				<NuxtLink to="/" class="text-md font-bold text-DacBlack bg-DacWhite p-1 rounded-full z-50 flex gap-2">
 					<NuxtImg src="/images/logo.png" alt="DAC Logo" class="h-14 w-14 rounded-full animate-myWiggle" />
 					<span ref="tagRef" class="hidden sm:flex md:hidden self-center">Dutch Anime Community</span>
 				</NuxtLink>
 			</div>
 			<nav ref="navRef"
-				class="bg-DacWhite relative p-4 rounded-full flex transition duration-700 md:hover:scale-100 z-20 h-16 md:h-auto w-30 md:w-auto">
+				class="bg-DacWhite relative p-4 rounded-full flex transition duration-700 md:hover:scale-100 z-20 h-16 md:h-auto w-30 md:w-auto md:shadow-md">
 				<button class="toggle-button md:hidden flex items-center gap-2" @click="toggleNav" ref="navButtonRef">
 					<!-- Hamburger menu icon -->
 					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 hamburger-icon">
@@ -199,8 +201,11 @@ watch(() => route.path, () => {
 		</div>
 		<div class="corner top-left pointer-none corners h-4"></div>
 		<div @click="toggleNav" ref="adspaceRef"
-			class="adspace absolute bottom-0 left-0 w-[100dvw] h-0 opacity-100 z-10 bg-DacBlack/70">
+			class="adspace absolute bottom-0 left-0 w-[100dvw] opacity-100 z-10 bg-DacBlack/70 hidden">
 			<!-- form toevoegen like welke anime karakter is het beste etc.. -->
+			<div class="h-60 w-[94dvw] absolute bg-black/50 bottom-4 left-[3dvw] rounded-md">
+
+			</div>
 		</div>
 	</header>
 </template>

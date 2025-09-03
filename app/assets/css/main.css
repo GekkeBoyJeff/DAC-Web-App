@@ -1,8 +1,15 @@
 @import "@nuxt/ui";
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-display: swap;
+}
+
 @theme static {
-  --font-sans: "Public Sans", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Georgia", serif;
 
   --color-DacYellow: #d6a760;
   --color-DacYellow-100: #fff3cc;
@@ -81,18 +88,16 @@ body>div{
   @apply sm:w-[calc(100%-1.5rem)] m-auto rounded-4xl overflow-hidden;
 }
 
+header{
+  /* filter: drop-shadow(0px 0px 2px #ccc); */
+}
+
 header .corners, header .corner{
   @apply -mt-0.5
 }
 
 .addon{
   @apply -mb-0.5
-}
-
-.hero::after{
-  @apply bottom-0 left-0 absolute w-full h-4/5;
-  content: '';
-  background: linear-gradient(0deg, #c1a44f 0%, transparent 100%);
 }
 
 .hero div{
@@ -132,7 +137,7 @@ header .corners, header .corner{
 }
 
 .corner.yellow {
-  --corner-color: var(--color-DacYellow-100);
+  /* --corner-color: var(--color-DacYellow-100); */
 }
 
 .show-nav{

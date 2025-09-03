@@ -2,6 +2,8 @@
 </script>
 
 <template>
+	<NuxtRouteAnnouncer />
+	<NuxtLoadingIndicator />
 	<NuxtLayout>
 		<UApp>
 			<NuxtPage />

@@ -39,6 +39,9 @@ jobs:
 
       - name: Static HTML export with Nuxt
         run: npm run generate
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

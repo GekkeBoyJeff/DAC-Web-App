@@ -17,6 +17,11 @@ export default defineNuxtConfig({
     devtools: {
         enabled: true
     },
+    site: {
+        url: 'https://dutchanimecommunity.nl', // Vervang dit door je echte website URL
+        name: 'Dutch Anime Community',
+        description: 'Welkom bij de grootste anime community van Nederland'
+    },
     app: {
         head: {
             title: 'Dutch Anime Community',
@@ -64,6 +69,11 @@ export default defineNuxtConfig({
     vite: {
         server: {
             allowedHosts: ['nearby-pigeon-touching.ngrok-free.app']
+        }
+    },
+    nitro: {
+        prerender: {
+            failOnError: false
         }
     },
     compatibilityDate: '2025-05-15',

@@ -21,11 +21,12 @@ export default defineNuxtConfig({
         enabled: true
     },
     site: {
-        url: 'https://dutchanimecommunity.nl',
+        url: process.env.NUXT_APP_BASE_URL || 'https://gekkeboyjeff.github.io/DAC-Web-App/',
         name: 'Dutch Anime Community',
         description: 'Welkom bij de grootste anime community van Nederland'
     },
     app: {
+        baseURL: process.env.NODE_ENV === 'production' ? '/DAC-Web-App/' : '/',
         head: {
             title: 'Dutch Anime Community',
             meta: [{

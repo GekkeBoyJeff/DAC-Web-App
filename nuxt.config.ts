@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
+        '@nuxtjs/tailwindcss',
         '@nuxt/image',
         '@nuxt/icon',
         '@nuxt/fonts',
         '@nuxt/eslint',
         '@nuxt/ui',
-        '@nuxtjs/tailwindcss',
         '@nuxtjs/supabase',
         '@pinia/nuxt',
         '@nuxtjs/sitemap',
@@ -70,6 +70,28 @@ export default defineNuxtConfig({
         server: {
             allowedHosts: ['nearby-pigeon-touching.ngrok-free.app']
         }
+    },
+    image: {
+        // Configuratie voor @nuxt/image
+        quality: 80,
+        format: ['webp', 'jpg', 'png'],
+        screens: {
+            xs: 320,
+            sm: 640,
+            md: 768,
+            lg: 1024,
+            xl: 1280,
+            xxl: 1536,
+        },
+        presets: {
+            avatar: {
+                modifiers: {
+                    format: 'jpg',
+                    width: 50,
+                    height: 50,
+                },
+            },
+        },
     },
     nitro: {
         prerender: {

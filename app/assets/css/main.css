@@ -58,6 +58,10 @@
   @apply sm:cursor-none;
 }
 
+body:has(.show-nav){
+  overflow: hidden;
+}
+
 a{
   line-height: normal;
 }

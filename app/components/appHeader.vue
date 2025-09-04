@@ -202,7 +202,7 @@ watch(() => route.path, () => {
 		</div>
 		<div class="corner top-left pointer-none corners h-4"></div>
 		<div @click="toggleNav" ref="adspaceRef"
-			class="adspace absolute bottom-0 left-0 w-[100dvw] opacity-100 z-10 bg-DacBlack/70 hidden">
+			class="adspace -mb-[1px] absolute bottom-0 left-0 w-[100dvw] opacity-100 z-10 bg-DacBlack/70 hidden">
 			<!-- form toevoegen like welke anime karakter is het beste etc.. -->
 			<div class="h-60 w-[94dvw] absolute bg-black/50 bottom-4 left-[3dvw] rounded-md">
 

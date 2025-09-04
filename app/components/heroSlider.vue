@@ -14,7 +14,7 @@ const slides = [
 </script>
 
 <template>
-    <section class="h-[95dvh] md:h-[70dvh] w-dvw overflow-hidden relative max-w-full hero">
+    <section class="h-[95dvh] md:h-[70dvh] landscape:h-full w-dvw overflow-hidden relative max-w-full hero">
         <div v-for="(slide, index) in slides" :key="index"
             class="relative px-4 md:px-8 grid h-full w-full grid-rows-6 grid-cols-6 md:grid-cols-12 md:grid-rows-8">
             <NuxtImg :src="slide.image" :alt="slide.alt" :placeholder="[50, 25, 75, 5]"

@@ -145,7 +145,7 @@ header .corners, header .corner{
 }
 
 .show-nav{
-  @apply fixed left-0 w-full rounded-[0_0_1rem_1rem] top-0 h-full;
+  @apply fixed left-0 w-full rounded-[0_0_1rem_1rem] top-0 h-full -mt-[1px];
 }
 
 .show-nav .toggle-button{

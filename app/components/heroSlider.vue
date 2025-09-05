@@ -18,9 +18,10 @@ const slides = [
         <div v-for="(slide, index) in slides" :key="index"
             class="relative px-4 md:px-8 grid h-full w-full grid-rows-6 grid-cols-6 md:grid-cols-12 md:grid-rows-8">
             <NuxtImg :src="slide.image" :alt="slide.alt" :placeholder="[50, 25, 75, 5]"
-                class="bg-top absolute w-full h-full object-cover object-[50%_25%] brightness-75" loading="eager" />
+                class="object-top bg-top absolute w-full h-full object-cover object-[50%_25%] brightness-75"
+                loading="eager" />
             <div
-                class="hero-content text-realWhite col-start-1 md:p-0 row-start-4 md:row-start-4 col-span-6 row-span-1 md:row-span-2 grid gap-2">
+                class="hero-content text-realWhite col-start-1 md:p-0 row-start-4 sm:row-start-3 md:row-start-4 col-span-6 sm:col-span-12 md:col-span-8 row-span-1 md:row-span-2 grid gap-2">
                 <h2 class="hero-title text-4xl font-bold">{{ slide.name }}</h2>
                 <p class="hero-description">{{ slide.description }}</p>
                 <nuxt-link :to="slide.link"

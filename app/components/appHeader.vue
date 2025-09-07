@@ -200,7 +200,7 @@ watch(() => route.path, () => {
 		<div class="p-2 border rounded-lg font-bold h-10 self-center text-center top-2 right-6 absolute">
 			<NuxtLink to="https://discord.gg/dutchanimecommunity" external>Word lid!</NuxtLink>
 		</div>
-		<div class="absolute bg-DacWhite w-34 right-0 -z-10 rounded-[0_0_0_3rem] pointer-none corners h-16 top-0">
+		<div class="absolute bg-DacWhite w-34 right-[-1px] -z-10 rounded-[0_0_0_3rem] pointer-none corners h-16 top-0">
 			<div class="corner left"></div>
 			<div class="corner right"></div>
 		</div>

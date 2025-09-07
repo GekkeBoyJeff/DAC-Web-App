@@ -25,9 +25,9 @@ const slides = [
                 <h2 class="hero-title text-4xl font-bold">{{ slide.name }}</h2>
                 <p class="hero-description">{{ slide.description }}</p>
                 <nuxt-link :to="slide.link"
-                    class="hero-cta flex items-center bg-primary py-2 px-4 text-DacBlack rounded-full w-fit">
+                    class="hero-cta flex items-center bg-primary py-2 px-4 text-DacBlack rounded-full w-fit relative overflow-hidden hover:text-DacWhite hover:bg-DacPurple">
                     {{ slide.linkText }}
-                    <span class="flex items-center text-DacWhite bg-black p-2 rounded-[100%] ml-4 -mr-2">
+                    <span class="flex items-center text-DacWhite bg-black p-2 rounded-[100%] ml-4 -mr-2 transition relative z-10">
                         <UIcon name="i-lucide-arrow-up-right" class="size-5" />
                     </span>
                 </nuxt-link>

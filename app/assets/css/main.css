@@ -61,13 +61,27 @@
   @apply sm:cursor-none;
 }
 
+main::before{
+    @apply content-[''] fixed top-0 left-0 w-full h-full -z-10 opacity-20;
+    content:'';
+    position:absolute;
+    background-image: radial-gradient(var(--color-DacYellow-700) 0.5px, var(--color-DacWhite) 1px);
+    background-size: 20px 20px;
+}
+
 body:has(.show-nav){
   overflow: hidden;
 }
 
 a{
   line-height: normal;
+  transition:.2s;
 }
+
+a:hover{
+  @apply scale-105
+}
+
 .cursor {
   @apply hidden sm:flex w-2 h-2 rounded-full bg-DacBrown top-0 left-0 fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
 }
@@ -115,15 +129,15 @@ header .corners, header .corner{
 }
 
 .corner.top-left{
-  @apply top-0 -left-0 rotate-270 h-8;
+  @apply top-0 -left-[1px] rotate-270 h-8;
 }
 
 .corner.right{
-  @apply -right-0 top-full;
+  @apply -right-[1px] top-full;
 }
 
 .corner.bottom{
-  @apply -bottom-8 left-0;
+  @apply -bottom-8 left-[-1px];
 }
 
 .corner-rotate-180{
@@ -170,10 +184,6 @@ nav .closeButton{
 .show-nav .logo{
   @apply absolute top-4 left-4
 }
-
-/* nav .active-tracker{
-  @apply duration-[0ms]
-} */
 
 .show-nav .active-tracker{
   @apply rounded-lg

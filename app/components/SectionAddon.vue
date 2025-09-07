@@ -1,7 +1,7 @@
 <template>
-    <div class="w-full absolute bottom-full left-0 h-20 addon z-10">
+    <div class="w-full absolute bottom-full left-0 h-20 addon z-10 pointer-events-none">
         <div
-            class="landscape:max-md:hidden absolute w-8/12 sm:w-80 md:w-1/3 left-0 bottom-0 h-20 bg-DacWhite rounded-tr-4xl">
+            class="absolute w-60 hidden sm:flex md:w-1/3 left-0 bottom-0 h-20 bg-DacWhite rounded-tr-4xl">
             <div class="corner bottom-full left-0 corner-rotate-180 yellow -mb-[1px]"></div>
             <div class="corner bottom-0 left-full corner-rotate-180 yellow -mb-[1px] -ml-[1px]"></div>
         </div>

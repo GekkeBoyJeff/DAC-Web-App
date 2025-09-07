@@ -95,77 +95,13 @@ body>div{
   @apply sm:w-[calc(100%-1.5rem)] m-auto rounded-4xl overflow-hidden;
 }
 
-.stats li{
-  @apply md:w-auto flex-[1_1_40%] md:flex-auto
-}
-
-@media (max-width: 1200px) and (max-height: 500px){
-  .hero{
-    @apply rounded-3xl h-[120vh]
-  }
-
-  .hero-content{
-    @apply col-start-1 col-span-12 row-span-5 row-start-3 grid-rows-4 grid-cols-12
-  }
-
-  .hero-title{
-    @apply row-start-1 col-span-12 col-start-1
-  }
-
-  .hero-content .hero-description{
-    @apply col-span-6 row-start-2
-  }
-
-  .hero-cta{
-    @apply col-span-6 row-start-5
-  }
-
-  .stats{
-    @apply col-span-5 col-start-8 row-start-4 row-span-3 m-0
-  }
-
-  .addon{
-    display:none;
-  }
-  .stats li{
-  @apply w-[6rem] h-6
-}
-}
-
-@media (max-width: 700px) and (max-height: 500px){
-  .hero-cta{
-    @apply mb-4
-  }
-  
-  .stats{
-    @apply col-span-3 col-start-4 row-start-4 row-span-4 m-0
-  }
-}
 
 /* .hero{
   @apply h-[120vh]
 } */
 
-@media (orientation: portrait) and (max-width: 640px) {
-  .hero-content{
-    @apply row-start-2 pb-4
-  }
-
-  .stats{
-    @apply -top-8 -mb-8 -mt-10
-  }
-}
-
 header .corners, header .corner{
   @apply -mt-0.5
-}
-
-.addon{
-  @apply -mb-0.5
-}
-
-.hero div{
-  @apply z-10
 }
 
 .corner {

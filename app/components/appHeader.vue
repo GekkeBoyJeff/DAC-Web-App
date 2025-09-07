@@ -14,9 +14,9 @@ const adspaceRef = ref<HTMLElement | null>(null)
 let isDown = false
 
 const getAnimationDuration = () => {
-	if (!headerRef.value) return 200 // fallback waarde
+	if (!headerRef.value) return 200 
 	const duration = getComputedStyle(headerRef.value).getPropertyValue('--nav-duration')
-	return parseInt(duration) || 200 // fallback als parsing faalt
+	return parseInt(duration) || 200
 }
 
 const toggleNav = async () => {
@@ -49,9 +49,12 @@ const startAnimation = async () => {
 			navParentRef.value?.classList.toggle('mt-4')
 		}, getAnimationDuration())
 		setTimeout(() => {
+			// adspaceRef.value?.classList.toggle('translate-y-[-100dvh]')
+			// adspaceRef.value?.classList.toggle('translate-y-[0dvh]')
+			adspaceRef.value?.classList.toggle('translate-y-full')
+		}, getAnimationDuration() * 0.1)
+		setTimeout(() => {
 			tagRef.value?.classList.toggle('hidden')
-			adspaceRef.value?.classList.toggle('h-full')
-			adspaceRef.value?.classList.toggle('hidden')
 
 		}, getAnimationDuration() + 300)
 		isDown = true
@@ -64,8 +67,9 @@ const startAnimation = async () => {
 			nav?.classList.toggle('toggleButton')
 			navParentRef.value?.classList.toggle('m-[0_auto]')
 			navParentRef.value?.classList.toggle('mt-4')
-			adspaceRef.value?.classList.toggle('h-full')
-			adspaceRef.value?.classList.toggle('hidden')
+			// adspaceRef.value?.classList.toggle('translate-y-[-100dvh]')
+			// adspaceRef.value?.classList.toggle('translate-y-[0dvh]')
+			adspaceRef.value?.classList.toggle('translate-y-full')
 			moveActiveBackground()
 			moveNavIntoView()
 		}, getAnimationDuration())
@@ -176,7 +180,7 @@ watch(() => route.path, () => {
 					<span ref="activeTracker"
 						class="duration-[0ms] absolute h-8 left-0 rounded-4xl backdrop-invert-100 transition-all md:duration-300 ease-in-out active-tracker">
 					</span>
-					<ul class="pointer-events-auto hidden md:flex landscape:flex-row landscape:flex-wrap landscape:gap-2 md:gap-2 flex-col md:flex-row"
+					<ul class="pointer-events-auto hidden md:flex xs:flex-col landscape:flex-row landscape:flex-wrap landscape:gap-2 md:gap-2 flex-col md:flex-row"
 						ref="navListRef">
 						<li v-for="item in navigationItems" :key="item.to"
 							class="flex-1 basis-1/2 md:flex-none md:basis-auto md:basis:unset landscape:flex-1/3 md:landscape:flex-[unset] hover:scale-[1.05] hover:font-bold transition has-[.active]:hover:scale-100 content-center z-10 md:h-8">
@@ -202,9 +206,9 @@ watch(() => route.path, () => {
 		</div>
 		<div class="corner top-left pointer-none corners h-4"></div>
 		<div @click="toggleNav" ref="adspaceRef"
-			class="adspace -mb-[1px] absolute bottom-0 left-0 w-[100dvw] opacity-100 z-10 bg-DacBlack/70 hidden">
+			class="-mb-[1px] absolute top-0 left-0 w-[100dvw] h-[100dvh] z-10 bg-DacBlack/70 translate-y-full duration-300">
 			<!-- form toevoegen like welke anime karakter is het beste etc.. -->
-			<div class="h-60 w-[94dvw] absolute bg-black/50 bottom-4 left-[3dvw] rounded-md">
+			<div class="h-60 w-[94dvw] absolute bg-black/50 bottom-8 left-[3dvw] rounded-md">
 
 			</div>
 		</div>

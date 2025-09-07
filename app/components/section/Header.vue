@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { navigationItems } from '../utils/navigation'
+// import { navigationItems } from '../utils/navigation'
 
 const headerRef = ref<HTMLElement | null>(null)
 const navListRef = ref<HTMLElement | null>(null)
@@ -49,8 +49,6 @@ const startAnimation = async () => {
 			navParentRef.value?.classList.toggle('mt-4')
 		}, getAnimationDuration())
 		setTimeout(() => {
-			// adspaceRef.value?.classList.toggle('translate-y-[-100dvh]')
-			// adspaceRef.value?.classList.toggle('translate-y-[0dvh]')
 			adspaceRef.value?.classList.toggle('translate-y-full')
 		}, getAnimationDuration() * 0.1)
 		setTimeout(() => {
@@ -67,8 +65,6 @@ const startAnimation = async () => {
 			nav?.classList.toggle('toggleButton')
 			navParentRef.value?.classList.toggle('m-[0_auto]')
 			navParentRef.value?.classList.toggle('mt-4')
-			// adspaceRef.value?.classList.toggle('translate-y-[-100dvh]')
-			// adspaceRef.value?.classList.toggle('translate-y-[0dvh]')
 			adspaceRef.value?.classList.toggle('translate-y-full')
 			moveActiveBackground()
 			moveNavIntoView()

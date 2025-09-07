@@ -3,6 +3,6 @@
 </script>
 
 <template>
-	<heroSlider />
-	<SectionTest />
+	<sectionHeroSlider />
+	<sectionAbout />
 </template>

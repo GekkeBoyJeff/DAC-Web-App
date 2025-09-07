@@ -3,7 +3,8 @@
 const slides = [
     {
         name: 'Welkom bij Dutch Anime Community',
-        description: 'De grootste anime community van Nederland en België. Of je nu van manga, games, cosplay of de Japanse cultuur houdt: bij ons vind je altijd gelijkgestemden.',
+        subtitle: 'De Thuisbasis voor Anime Fans',
+        description: 'De grootste Nederlandstalige anime- en mangacommunity. Voor en door fans. Of je nu van gamen, cosplay of de Japanse cultuur houdt, bij ons vind je jouw plek.',
         image: '/images/Spelletjesmiddag.jpg',
         alt: 'Welkom bij Dutch Anime Community',
         link: '/about',
@@ -23,6 +24,11 @@ const slides = [
             <div
                 class="flex flex-col z-10 p-4 text-DacWhite mt-50 gap-4 sm:col-span-12 md:col-span-9 lg:col-span-6 sm:row-span-4 md:mt-26">
                 <h2 class="hero-title text-4xl font-bold">{{ slide.name }}</h2>
+                <span class="block w-20 h-[1px] bg-DacWhite"></span>
+                <h3 class="hero-subtitle text-2xl font-semibold">
+                    <span class="font-bold text-3xl">{{ slide.subtitle.split(' ')[0] }}</span> 
+                    {{ slide.subtitle.split(' ').slice(1).join(' ') }}
+                </h3>
                 <p class="hero-description">{{ slide.description }}</p>
                 <nuxt-link :to="slide.link"
                     class="hero-cta flex items-center bg-primary py-2 px-4 text-DacBlack rounded-full w-fit relative overflow-hidden hover:text-DacWhite hover:bg-DacPurple">

@@ -8,8 +8,7 @@
 				<p>Website gemaakt door:</p>
 			</li>
 			<li>
-				<a href="https://jeffreyullers.nl" target="_blank" rel="noopener noreferrer" class="font-bold">Jeffrey
-					Ullers</a>
+				<a href="https://jeffreyullers.nl" target="_blank" rel="noopener noreferrer" class="font-bold">Jeffrey Ullers</a>
 			</li>
 		</ul>
 	</footer>

@@ -1,5 +1,7 @@
 <template>
     <div class="h-dvh relative">
-        <SectionAddon />
+        <SectionAddon>
+            <AddonSocials />
+        </SectionAddon>
     </div>
 </template>

@@ -79,7 +79,7 @@ a{
 }
 
 a:hover{
-  @apply scale-105
+  @apply scale-105 bg-DacPurple text-DacWhite
 }
 
 .cursor {

@@ -11,19 +11,26 @@
 </script>
 
 <template>
-  <div class="rounded-md flex gap-4 flex-wrap">
-    <div v-for="(image, index) in props.images" :key="index" :class="'relative h-50 bg-DacYellow/50 rounded-lg flex-1 basis-40 md:basis-1/3'">
-      <figure class="relative w-full h-full overflow-hidden">
-        <NuxtImg :src="image.src" :alt="image.alt" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-full rounded-lg overflow-hidden" />
-        <figcaption v-if="image.extra" class="absolute bottom-0 left-0 text-DacWhite backdrop-blur-2xl bg-DacBlack/10 text-sm p-2 rounded-b-lg w-full flex justify-between">
-          <span>
-            {{ image.extra }}
-          </span>
-          <span>
-            {{ index + 1 }}
-          </span>
-        </figcaption>
-      </figure>
-    </div>
+  <div class="flex flex-row mx-auto w-full gap-2">
+    <span v-for="(image, index) in props.images" :key="index" class="flex-1 sm:w-1/3 h-80 overflow-hidden rounded-xl">
+      <img
+        :src="image.src"
+        :alt="image.alt"
+        :class="[
+          'rounded-xl',
+          // index % 2 === 0 ? 'rotate-6' : '-rotate-6',
+          'hover:rotate-0',
+          'duration-500',
+          'hover:-scale-110',
+          'h-full',
+          'w-full',
+          'object-cover',
+          'hover:scale-120',
+          'transform',
+          'origin-bottom',
+          // index % 2 === 0 && index !== 0 ? '-translate-x-16' : ''
+        ]"
+      />
+    </span>
   </div>
 </template>

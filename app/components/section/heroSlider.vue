@@ -8,7 +8,7 @@ const slides = [
         image: '/images/Spelletjesmiddag.jpg',
         alt: 'Welkom bij Dutch Anime Community',
         link: '/about',
-        linkText: 'Word lid!',
+        linkText: 'Join de Discord!',
     },
 ]
 
@@ -22,7 +22,7 @@ const slides = [
                 class="object-top bg-top absolute w-full h-full object-cover md:object-[50%_25%] brightness-75 z-0"
                 loading="eager" />
             <div
-                class="flex flex-col z-10 p-4 text-DacWhite mt-50 gap-4 sm:col-span-12 md:col-span-9 lg:col-span-6 sm:row-span-4 md:mt-26">
+                class="pb-32 sm:pb-4 md:pb-0 flex flex-col z-10 p-4 text-DacWhite mt-50 gap-4 sm:col-span-12 md:col-span-9 lg:col-span-6 sm:row-span-4 md:mt-26">
                 <h2 class="hero-title text-4xl font-bold">{{ slide.name }}</h2>
                 <span class="block w-20 h-[1px] bg-DacWhite"></span>
                 <h3 class="hero-subtitle text-2xl font-semibold">

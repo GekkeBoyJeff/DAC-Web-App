@@ -36,7 +36,7 @@ const content = {
                 <itemSocials />
             </ExtensionsSectionAddon>
         </div>
-        <div class="flex sm:grid grid-cols-12 pt-30 pb-14 sm:py-40">
+        <div class="flex sm:grid grid-cols-12 pt-20 pb-14">
             <ItemCrossTitle :title="content.title" class="col-span-12 lg:col-span-8" />
         </div>
         <div :class="'flex flex-wrap md:grid grid-cols-12 gap-4 p-4'">
